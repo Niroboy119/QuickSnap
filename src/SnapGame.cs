@@ -1,6 +1,7 @@
 using System;
 using SwinGameSDK;
 using CardGames.GameLogic;
+using SwinGame.LoadSoundEffectNamed ("Slap", "slap.wav");
 
 namespace CardGames
 {
@@ -34,7 +35,7 @@ namespace CardGames
 				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
 				{
 					// sound effect added
-					Console.Beep();
+					using SwinGame.PlaySoundEffect ("Slap");
 
 				}else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
 				{

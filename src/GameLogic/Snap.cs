@@ -1,5 +1,6 @@
 ﻿using System;
 using SwinGameSDK;
+using SwinGame.LoadSoundEffectNamed ("Slap", "slap.wav");
 
 #if DEBUG
 using NUnit.Framework;
@@ -150,7 +151,7 @@ namespace CardGames.GameLogic
 				//TODO: consider playing a sound here...
 
 				// sound effect added when player scores
-				Console.Beep();
+				using SwinGame.PlaySoundEffect ("Slap");
 			}// code for deducting player score added
 			else if ( player >= 0 && player < _score.Length)
 			{
