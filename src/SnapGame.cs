@@ -1,7 +1,6 @@
 using System;
 using SwinGameSDK;
 using CardGames.GameLogic;
-using SwinGame.LoadSoundEffectNamed ("Slap", "slap.wav");
 
 namespace CardGames
 {
@@ -13,7 +12,8 @@ namespace CardGames
             cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
 			SwinGame.LoadFontNamed("GameFont", "Chunkfive.otf", 24);
             SwinGame.BitmapSetCellDetails (cards, 167, 250, 13, 5, 53);      // set the cells in the bitmap to match the cards
-        }
+			SwinGame.LoadSoundEffectNamed("Slap", "slap.wav");
+		}
 
 		/// <summary>
 		/// Respond to the user input -- with requests affecting myGame
@@ -35,7 +35,7 @@ namespace CardGames
 				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
 				{
 					// sound effect added
-					using SwinGame.PlaySoundEffect ("Slap");
+					SwinGame.PlaySoundEffect ("Slap");
 
 				}else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
 				{
